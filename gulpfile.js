@@ -1,6 +1,6 @@
 var gulp = require('gulp'),
-    sass = require('gulp-sass'),
-    sassglob = require('gulp-sass-glob'),
+    less = require('gulp-less'),
+    lessglob = require('gulp-less-glob'),
     cssmin = require('gulp-cssmin'),
     autoprefixer = require('gulp-autoprefixer'),
     postcss = require('gulp-postcss'),
@@ -10,21 +10,18 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     browserSync = require('browser-sync').create(),
     strip = require('gulp-strip-comments'),
-    fileinclude = require('gulp-file-include'),
+    imgMin = require('gulp-imagemin'),
 
     reload = browserSync.reload;
-const mainFolder = './Web/',
-      libraryFolder = './Library/',
-      succes = chalk.bgGreen.black,
-      warning = chalk.bgRed.white;
+
+const succes = chalk.bgGreen.black;
 
 console.log(succes('\n--------> Gulp Build Started <--------'));
 
-gulp.task('scss', function() {
-    gulp.src(['dev/assets/scss/styles.scss'])
-    .pipe(plumber())
-    .pipe(sassglob())
-    .pipe(sass())
+gulp.task('less', function() {
+    gulp.src(['dev/assets/less/styles.less'])
+    .pipe(lessglob())
+    .pipe(less())
     .pipe(autoprefixer('last 10 versions', 'ie 9'))
     .pipe(cssmin())
     .pipe(rename({suffix:'.min'}))
@@ -44,14 +41,17 @@ gulp.task('js', function() {
     .pipe(browserSync.stream());
 });
 
-gulp.task('fileinclude', function() {
+gulp.task('html', function() {
   gulp.src(['dev/*.html'])
-    .pipe(fileinclude({
-      prefix: '@@',
-      basepath: '@file'
-    }))
     .pipe(strip())
     .pipe(gulp.dest('prod'))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('img', function() {
+  gulp.src(['dev/assets/images/*'])
+    .pipe(imgMin())
+    .pipe(gulp.dest('prod/assets/images'))
     .pipe(browserSync.stream());
 });
 
@@ -61,7 +61,13 @@ gulp.task('build', function() {
       baseDir: 'prod'
     }
   });
-  gulp.watch(['dev/assets/scss/**/*.scss'], ['scss'], reload);
-  gulp.watch(['dev/assets/js/**/*.js'], ['js'], reload);
-  gulp.watch(['dev/**/*.html'], ['fileinclude'], reload);
+
+
+    gulp.watch('dev/assets/less/**/*.less').on('change',gulp.series('less'));
+    gulp.watch('dev/assets/js/**/*.js').on('change',gulp.series('js'));
+    gulp.watch('dev/*.html').on('change',gulp.series('html'));
+
+
+
+  
 });

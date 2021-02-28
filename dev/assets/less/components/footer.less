@@ -1,0 +1,129 @@
+.footer{
+	background: @footer-color;
+	color: @white-color;
+	font-weight: 400;
+	padding: 0px 0 30px 0;
+
+	@media screen and (min-width: @lg) {
+		padding: 30px 0 60px 0;
+	}
+
+	&__flex-container-box{
+		margin-top: 54px;
+	}
+
+	&__social-logo{
+		@media screen and (min-width: @lg) {
+			display: flex;
+			flex-direction: column-reverse;
+			justify-content: space-between;
+		}
+	}
+
+	&__navigation{	
+		padding: 0 24px;
+		display: flex;
+		justify-content: space-between;
+		max-width: 450px;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;	
+
+		@media screen and (min-width: @md) {
+			max-width: 750px;
+		}	
+
+		@media screen and (min-width: @lg) {
+			width: 65% !important;
+		}	
+
+		ul{	
+
+			@media screen and (min-width: @lg) {
+				width: 50%;
+			}
+
+			li{
+				margin-top: 22px;
+				font-size: 15px;
+
+				&:first-child{
+					margin-top: 0;
+				}
+
+				a{
+					&:hover{
+						@media screen and (min-width: @lg) {
+							color: @primary-color;	
+							transition: all @transition-time ease;
+						}
+					}
+				}
+
+				@media screen and (min-width: @md) and (max-width: @lg - 1px) {
+					display: inline-block;
+					margin-top: 0;
+					margin-right: 16px;
+
+					&:last-child{
+						margin-right: 0;
+					}
+				}
+				
+			}		
+		}
+	}
+
+	&__social{
+		display: flex;
+		justify-content: space-between;
+		max-width: 296px;
+		margin: 0 auto 54px auto;
+
+		@media screen and (min-width: @lg) {
+			max-width: 154px;
+			margin: 0;	
+		}
+
+		i{
+			font-size: 32px;
+			cursor: pointer;
+			transition: color @transition-time ease;
+
+			@media screen and (min-width: @lg) {
+				font-size: 20px;
+			}
+
+			&:hover{
+				color: @primary-color;
+			}
+		}
+	}
+
+	&__logo{
+		display: flex;
+		justify-content: center;
+
+		@media screen and (min-width: @lg) {
+			justify-content: flex-start;
+		}
+
+		img{
+			width: 158px;
+		}
+	}
+
+	&__copy{
+		color: fade(@white-color, 50%);
+		text-align: center;
+		margin-top: 54px;
+		margin-bottom: 0;
+
+		@media screen and (min-width: @lg) {
+			text-align: right;
+			//margin-top: 0;
+			//transform: translateY(-100%);
+			margin-top: -24px;
+		}
+	}
+}

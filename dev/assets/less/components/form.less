@@ -1,0 +1,119 @@
+.form{
+	display: flex;
+	max-width: 600px;
+	margin: 0 auto;
+	position: relative;
+	
+	border-radius: @border-radius;
+
+	&::after{
+		content: attr(data-succes);
+		position:absolute;		
+		top: 0;
+		left: 0;
+		opacity: 0;
+		height: 100%;
+		width: 0px;
+		background: @white-color;
+		border-radius: @border-radius;
+		color: transparent;
+		display: flex;
+		justify-content: center;
+		align-items: center;		
+		transition: width 1s ease, opacity 1s ease, color 0s ease;
+		pointer-events:none;
+		
+	}
+
+	&.succes{
+		overflow-y: hidden;
+
+		&::after{
+			width: 100%;
+			opacity: 1;
+			color: @primary-color;
+			transition: width @transition-time ease, opacity 0s ease, color 1s ease;
+			pointer-events:all;
+		}
+	}
+
+	@media screen and (min-width: @lg) {
+		max-width: none;
+	}
+
+	*{		
+		font-family: 'Be Vietnam';
+	}
+
+	&__input-wrapper{
+		position: relative;
+		display: flex;
+		width: 100%;
+
+		&.has-error{
+
+			&::after{
+				content: attr(data-error);
+				display: block;
+				position:absolute;
+				left: 12px;
+				bottom: -15px;
+				color: @error-color;
+				font-size: 10px;
+				font-style: italic;
+			}
+
+			input{
+				border: 1px solid @error-color;
+				color: @error-color;
+			}			
+		}
+
+	}
+
+	input{
+		width: 100%;
+		padding: 12px 24px;
+		border-radius: @border-radius;
+		border:none;
+		margin-right: 8px;
+		color: @dark-grey-color;
+		border: 1px solid transparent;
+		font-size: 13px;
+
+		& ~ label{
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			color: @dark-grey-color;
+			left: 12px;
+			font-size: 13px;
+			pointer-events: none;
+			transition: all @transition-time ease;
+
+			&.filled{
+				top: -15px;
+				transform: translateY(0%);
+				color: @white-color;
+				left: 12px;
+				font-size: 12px;
+			}
+		}
+
+		&:focus{
+			& ~ label{
+				top: -15px;
+				transform: translateY(0%);
+				color: @white-color;
+				left: 12px;
+				font-size: 12px;
+			}
+		}		
+	}
+
+	button.btn, .btn{
+		box-shadow: none;
+		padding-left: 24px;
+		padding-right: 24px; 
+	}
+}

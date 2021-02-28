@@ -1,0 +1,110 @@
+body{
+	font-family: Be Vietnam;
+	font-weight: 500;
+	color: @text-color;
+
+	&.menu-open{
+		overflow: hidden;
+	}
+
+	& *::selection{
+		background: @secondary-color;
+		color: @white-color;
+	}
+}
+
+h1{
+	font-size: 40px;
+	line-height: 50px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	margin-top: 20px;
+
+	@media screen and (min-width: @md) {
+		font-size: 56px;
+		line-height: 64px;
+		margin-bottom: 40px;
+		margin-top: 0;
+	}
+
+}
+
+h2{
+	font-size: 30px;
+	line-height: 45px;
+	font-weight: bold;
+	margin-bottom: 30px;
+
+	@media screen and (min-width: @md) {
+		font-size: 40px;
+		line-height: 44px;
+		margin-bottom: 40px;
+	}
+}
+
+h3{
+	font-size: 16px;
+	line-height: 23px;
+	font-weight: bold;
+	margin-bottom: 18px;
+}
+
+p{
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 24px;
+	color: fade(@secondary-color, 50%);	
+	margin-bottom: 30px;
+
+	@media screen and (min-width: @md) {
+		font-size: 16px;
+		line-height: 26px;
+	}
+}
+
+img{
+	width: 100%;
+}
+
+.subheadline{
+	@media screen and (min-width: @md) {
+		max-width: 350px;
+	}	
+}
+
+.text-center{
+	text-align: center;
+}
+
+.overlay{
+	opacity: 0;
+	pointer-events: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: linear-gradient(to bottom, transparent 0%, fade(@black-color, 60%) 100%) no-repeat;
+	transition: all @transition-time ease;
+
+	&--active{
+		opacity: 1;
+		pointer-events: all;
+	}
+}
+
+.flex{
+	display: flex;
+
+	&--align-center{
+		align-items: center;
+	}
+
+	&--justify-center{
+		justify-content: center;
+	}	
+
+	&--justify-space-between{
+		justify-content: space-between;
+	}
+}

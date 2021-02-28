@@ -7,20 +7,169 @@
   <meta name="author" content="Daniel Hrdlička">
 
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.min.css">
 
-    <title>Alensa - Home work</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <title>Alensa - Homework</title>
 
 </head>
 <body> 
-  <header>
+  <header class="header">
+    <div class="container">
+      <div class="header__logo">
+        <a href="#">
+          <img src="assets/images/logo.svg" alt="manage logo">
+        </a>
+      </div>      
+      <ul class="header__nav" role="navigation">
+        <li class="header__nav-item"><a href="">Pricing</a></li>
+        <li class="header__nav-item"><a href="">Product</a></li>
+        <li class="header__nav-item"><a href="">About Us</a></li>
+        <li class="header__nav-item"><a href="">Careers</a></li>
+        <li class="header__nav-item"><a href="">Community</a></li>
+      </ul>     
+      <div class="header__cta">
+        <div class="btn btn--primary">get started</div>
+      </div>
+      <div class="hamburger">
+        <div class="hamburger__line"></div>
+        <div class="hamburger__line"></div>
+        <div class="hamburger__line"></div>
+      </div>
+    </div>
+  </header>
 
-      </header>
+  <section class="hero hero--mobile-pattern">
+    <div class="container">
+      <div class="flex-container flex-container--half flex-container--align-center flex-container--md-reverse">
+        <div class="flex-container__box">
+          <img src="assets/images/illustration-intro.svg" alt="illustration">
+        </div>
+        <div class="flex-container__box">
+          <h1>Bring everyone together to build better products.</h1>
+          <p class="hero__subheadline subheadline">Manage makes it simple for software teams to plan day-to-day tasks while keeping the larger team goals in view.</p>
+          <div class="btn btn--primary">get started</div>
+        </div>
+      </div>  
+    </div>              
+  </section>
+
   <section>
+    <div class="container">
+      <div class="flex-container flex-container--half">
+        <div class="flex-container__box">
+         <h2>What’s different about Manage?</h2>
+          <p class="subheadline">Manage provides all the functionality your team needs, without the complexity. Our software is tailor-made for modern digital product teams.</p>
+        </div>
+        <div class="flex-container__box">
+          <ol class="ol">
+            <li class="ol__item">
+              <h3 class="ol__item-heading">Track company-wide progress</h3>
+              <p class="ol__item-content">See how your day-to-day tasks fit into the wider vision. Go from tracking progress at the milestone level all the way done to the smallest of details. Never lose sight of the bigger picture again.</p>
+            </li>
+            <li class="ol__item">
+              <h3 class="ol__item-heading">Advanced built-in reports</h3>
+              <p class="ol__item-content">Set internal delivery estimates and track progress toward company goals. Our customisable dashboard helps you build out the reports you need to keep key stakeholders informed.</p>
+            </li>
+            <li class="ol__item">
+              <h3 class="ol__item-heading">Everything you need in one place</h3>
+              <p class="ol__item-content">Stop jumping from one service to another to communicate, store files, track tasks and share documents. Manage offers an all-in-one team productivity solution.</p>
+            </li>
+          </ol>
+        </div>
+      </div>  
+    </div> 
+  </section>
 
-      </section>
-  <footer>
+  <section class="section-bg-pattern">
+    <div class="container">
+      <h2 class="text-center">What they’ve said</h2>
+    </div>
+    <div class="slider">
+      <div class="slider__item">
+        <img src="assets/images/avatar-anisha.png" alt="Anisha Li" class="slider__item-image">
+        <h3>Anisha Li</h3>
+        <p>“Manage has supercharged our team’s workflow. The ability to maintain visibility on larger milestones at all times keeps everyone motivated.”</p>
+      </div>
+      <div class="slider__item">
+        <img src="assets/images/avatar-ali.png" alt="Ali Bravo" class="slider__item-image">
+        <h3>Ali Bravo</h3>
+        <p>“We have been able to cancel so many other subscriptions since using Manage. There is no more cross-channel confusion and everyone is much more focused.”</p>
+      </div>
+      <div class="slider__item">
+        <img src="assets/images/avatar-richard.png" alt="Richard Watts" class="slider__item-image">
+        <h3>Richard Watts</h3>
+        <p>“Manage allows us to provide structure and process. It keeps us organized and focused. I can’t stop recommending them to everyone I talk to!”</p>
+      </div>
+      <div class="slider__item">
+        <img src="assets/images/avatar-shanai.png" alt="Shanai Gough" class="slider__item-image">
+        <h3>Shanai Gough</h3>
+        <p>“Their software allows us to track, manage and collaborate on our projects from anywhere. It keeps the whole team in-sync without being intrusive.”</p>
+      </div>
+    </div>
+    <div class="container text-center">
+      <div class="btn btn--primary">get started</div>
+    </div>
+  </section>
 
-      </footer>
+  <section class="modal modal--primary">   
+    <div class="container">
+      <div class="flex-container flex-container--half">
+        <div class="flex-container__box modal__box"><h2>Simplify how your team works today.</h2></div>
+        <div class="flex-container__box modal__box"><div class="btn btn--white">get started</div></div>
+      </div>      
+    </div>   
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="flex-container flex-container--third flex-container--md-reverse footer__flex-container">
+        <div class="flex-container__box footer__flex-container-box footer__newsletter">
+          <form action="#" class="form" data-succes="Thank you">
+            <div class="form__input-wrapper" data-error="Please insert a valid email">
+              <input type="email" id="email">
+              <label for="email">Updates in your inbox…</label>
+            </div>
+            <div class="btn btn--primary submit-button">go</div>
+          </form>
+        </div>
+        <div class="flex-container__box footer__flex-container-box footer__navigation">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">About Us</a></li> 
+          </ul>       
+          <ul> 
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="flex-container__box footer__flex-container-box footer__social-logo">
+          <div class="footer__social">
+            <a href=""><i class="fab fa-facebook-square"></i></a>
+            <a href=""><i class="fab fa-youtube"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+            <a href=""><i class="fab fa-pinterest"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>
+          </div>
+          <div class="footer__logo">
+            <a href="#">
+              <img src="assets/images/logo-white.svg" alt="manage logo">
+            </a>
+          </div>
+        </div>
+      </div>
+      <p class="footer__copy">Copyright 2020. All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <div class="overlay"></div>
+
+  <script src="assets/js/scripts.min.js"></script>
+  <script src="https://kit.fontawesome.com/cff88f0bd1.js" crossorigin="anonymous"></script>
 </body>
 </html>

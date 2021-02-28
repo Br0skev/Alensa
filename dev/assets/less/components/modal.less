@@ -1,0 +1,36 @@
+.modal{
+	padding: 91px 0;
+	background: url('../images/bg-simplify-section-mobile.svg') left 60% no-repeat; 
+	
+	@media screen and (min-width: @md) {		
+		padding: 62px 0;
+		background: url('../images/bg-simplify-section-desktop.svg') calc(50% + 250px) 100% no-repeat; 
+	}
+
+	&--primary{
+		color:@white-color;
+		background-color: @primary-color;
+	}
+
+	h2{
+		font-size: 40px;
+		line-height: 50px;
+		margin-bottom: 30px;
+
+		@media screen and (min-width: @md) {
+			margin-bottom: 0;
+		}
+
+	}
+
+	&__box{
+		&:nth-child(even){
+
+			@media screen and (min-width: @md) {
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+			}			
+		}
+	}
+}

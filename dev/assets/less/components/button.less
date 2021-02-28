@@ -1,0 +1,33 @@
+.btn{
+	padding: 14px 32px;
+	border-radius: @border-radius;
+	font-weight: bold;
+	text-transform: capitalize;
+	display: inline-block;
+	font-size: 13px;
+	line-height: 19px;
+	transition: all @transition-time ease;
+	cursor: pointer;
+
+	&--primary{
+		background:@primary-color;
+		color:@white-color;
+		box-shadow: 0px 15px 15px -10px fade(@primary-color, 50%);
+
+		&:hover{
+			background: fade(@primary-color, 70%);
+			color: fade(@white-color, 90%);
+		}
+	}
+
+	&--white{
+		background: @white-color;
+		color:@primary-color;
+		box-shadow: 0px 15px 15px -10px fade(@black-color, 30%);
+
+		&:hover{
+			color: fade(@primary-color, 70%);
+			background: fade(@white-color, 90%);
+		}
+	}
+}

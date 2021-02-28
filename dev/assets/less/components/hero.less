@@ -1,0 +1,47 @@
+.hero{
+	padding-top: 110px;
+	position: relative;
+	background: url('../images/bg-tablet-pattern.svg') calc(50% + 50vw) -30vw no-repeat;	
+	background-size: 170vw;	
+
+	@media screen and (min-width: @md) {
+		background: url('../images/bg-tablet-pattern.svg') calc(50% + 600px) calc(50% - 120px) no-repeat;
+		background-size: 1000px;
+	}
+	
+
+	@media screen and (min-width: @lg) {
+		padding-top: 220px;
+	}
+
+	&__subheadline{
+		font-size: 16px;
+		line-height: 28px;
+		font-weight: 300;
+		color: fade(@secondary-color, 50%);
+		margin-bottom: 30px;
+
+		@media screen and (min-width: @md) {
+			margin-bottom: 40px;
+		}
+	}
+
+	&--mobile-pattern{
+		&::after{
+			content: "";
+			display: block;
+			background: url('../images/bg-tablet-pattern-old.svg') no-repeat;
+			background-size: 100%;
+			position: absolute;
+			bottom: -140px;
+   			right: -150px;
+			width: 280px;
+			height: 420px;
+			z-index: -1;
+
+			@media screen and (min-width: @md) {
+				display: none;
+			}
+		}
+	}
+}
